@@ -6,7 +6,7 @@ class BaselineResNet50Encoder(nn.Module):
     """
 import torch.nn as nn
 import torchvision.models as models
-from .segmentation_models import ResNet50UNetDecoder
+from .decoders import ResNet50UNetDecoder
 
 class BaselineResNet50Encoder(nn.Module):
     """
