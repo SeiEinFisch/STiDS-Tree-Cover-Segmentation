@@ -12,11 +12,56 @@ I decided to approach this tree cover segmentation with a contrastive learning d
 
 To ensure that this project runs smoothly it is recommended that the same environemnt that this project was designed in is used. The following packages and dependencies were used.
 
-
+| Module/package | version |
+| ---------------| --------|
+|Python |3.11.13 |
+|pandas | 2.2.3 |
+|numpy | 1.26.4 |
+|torch | 2.6.0+cu124 |
+|scikit-learn | 1.2.2 |
+|matplotlib| 3.7.2|
+|transformers | 4.52.4 |
 
 
 Additionally I used Kaggle to run the code as the service offers the needed hardware requirements. Specifically the P100 GPU with 16GB of VRAM was used.
 
+## Folder Structure
+
+```
+STiDS-Tree-Cover-Segmentation/
+├── LICENSE                              # Apache License 2.0
+├── README.md                            # Project documentation
+├── config.py                            # Configuration settings and paths
+├── main.py                              # Main training script
+├── main.ipynb                           # Jupyter notebook for training (includes a full training loop that can be used)
+├── simclr-resnet50-unet-original.ipynb  # original jupyter notebook containing all code. Was split up for better overview
+├── tiling.ipynb                         # Notebook for preprocessing large images into tiles
+│
+├── data/                                # Data handling modules
+│   ├── __init__.py
+│   ├── dataloaders.py                  # DataLoader creation functions
+│   ├── datasets.py                     # Custom Dataset classes
+│   └── transforms.py                   # SimCLR augmentations
+│
+├── models/                              # Model architectures
+│   ├── __init__.py
+│   ├── baseline_model.py               # Baseline ResNet50 without SimCLR
+│   ├── decoders.py                     # U-Net decoder implementation
+│   ├── encoders.py                     # ResNet50 encoder variants
+│   ├── segmentation.py                 # Complete segmentation models
+│   └── simclr.py                       # SimCLR model and projection head
+│
+├── training/                            # Training and evaluation scripts
+│   ├── __init__.py
+│   ├── baseline_trainer.py             # Training functions for baseline model
+│   ├── segmentation_trainer.py         # Training functions for SimCLR model
+│   └── simclr_trainer.py               # SimCLR contrastive learning trainer
+│
+└── utils/                              # Utility functions
+    ├── __init__.py
+    ├── io_utils.py                     # Data saving utilities
+    └── visualization.py                # Plotting and visualization functions
+```
 
 # Training
 
