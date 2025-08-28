@@ -68,3 +68,5 @@ Note: Baseline model is using a ResNet50 Encoder without SimCLR.
 ## Conclusion
 
 Evaluation performance of the baseline ResNet50 model usually slightly better. Might be due to overfitting. Atleast in this experiment with the data we use, the video game dataset performs worse besides in Dice score.
+
+# AI-Usage card<img width="1527" height="1916" alt="ai-usage-card(1)" src="https://github.com/user-attachments/assets/2f62e2e5-7499-4568-88e8-6616765bf2f9" />
