@@ -24,12 +24,12 @@ Additionally I used Kaggle to run the code as the service offers the needed hard
 
 I used three seperate datasets for this project. 
 
-The first dataset was a labeled high resolution aerial image dataset from around the City of Göttingen offered to me by our supervisors. This dataset was used for fine tuning the image segmentation decoder with a resolution of 256x256 pixels. 
+The first dataset was a labeled high resolution aerial image dataset from around the City of Göttingen offered to me by our supervisors. This dataset was used for fine tuning the SimCLR encoder with a resolution of 256x256 pixels. (1000 images)
 
-The second dataset was a dataset from the videogame GTA V, also offered to me by our supervisors. This dataset was used for pretraining the SimCLR encoder model.
+The second dataset was a dataset from the videogame GTA V, also offered to me by our supervisors. This dataset was used for pretraining the SimCLR encoder model. (385 images)
 
-The third dataset is from the [OAM-TCD](https://arxiv.org/abs/2407.11743) Dataset which gathered diverse high resolution tree segmentation images. These images with a resolution of 2048 x 2048 were cut into smaller patches of 256x256 to match the decoder size, since this dataset is used for the SimCLR encoder model.
-\n Since the dataset was very large I decided to only use the first 1848 images that were cut up into 8 x 8 tiles which resulted in 118.272 images for pre-training.
+The third dataset is from the [OAM-TCD](https://arxiv.org/abs/2407.11743) Dataset which gathered diverse high resolution tree segmentation images. These images with a resolution of 2048 x 2048 were cut into smaller patches of 256x256 to match the decoder size, since this dataset is used for the fine-tuned decoder model.
+Since the dataset was very large I decided to only use the first 16176 tiles. This amounts to only the first 252 images, but this was done to reduce the computing time as it already takes a long time with this many images.
 
 Note:
 Data paths might need to be reconfigured since it used the Kaggle folder structure.
@@ -55,3 +55,7 @@ Data paths might need to be reconfigured since it used the Kaggle folder structu
 
 <img width="5370" height="1466" alt="training_comparison_20250828_080542" src="https://github.com/user-attachments/assets/63079edf-2265-4dff-ace5-de83967850ce" />
 Note: Baseline model is using a ResNet50 Encoder without SimCLR.
+
+## Including video game data
+<img width="5370" height="1466" alt="training_comparison_20250828_120114" src="https://github.com/user-attachments/assets/299f9395-0527-4b56-8781-3ff2e68d7780" />
+
