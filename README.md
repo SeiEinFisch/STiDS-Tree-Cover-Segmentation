@@ -59,3 +59,12 @@ Note: Baseline model is using a ResNet50 Encoder without SimCLR.
 ## Including video game data
 <img width="5370" height="1466" alt="training_comparison_20250828_120114" src="https://github.com/user-attachments/assets/299f9395-0527-4b56-8781-3ff2e68d7780" />
 
+| Metric | Baseline | SimCLR real-world only | SimCLR with video game data |
+| --- | ---- | ---- | --- |
+| IoU | **0.886** | 0.878 | 0.796 |
+| Dice | 0.404 | 0.396 | **0.538** |
+| Pixel acc | **95%** | 94% | 93% |
+
+## Conclusion
+
+Evaluation performance of the baseline ResNet50 model usually slightly better. Might be due to overfitting. Atleast in this experiment with the data we use, the video game dataset performs worse besides in Dice score.
