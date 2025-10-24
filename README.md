@@ -114,6 +114,8 @@ Since the dataset was very large, I decided to only use the first 16,176 tiles. 
 
 The evaluation performance of the baseline ResNet50 model is usually slightly better. This might be due to overfitting. At least in this experiment with the data we used, the video game dataset performs worse except in Dice score.
 
+Further conclusions were presented in the seminar.
+
 # AI-Usage card
 
 <img width="1527" height="1916" alt="ai-usage-card(1)" src="https://github.com/user-attachments/assets/2f62e2e5-7499-4568-88e8-6616765bf2f9" />
